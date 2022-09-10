@@ -7,7 +7,7 @@ DEFAULT_INVERTER_MB_SLAVEID = 1
 DEFAULT_LOOKUP_FILE = 'deye_hybrid.yaml'
 LOOKUP_FILES = ['deye_hybrid.yaml', 'deye_string.yaml', 'sofar_lsw3.yaml', 'sofar_wifikit.yaml', 'solis_hybrid.yaml', 'sofar_g3hyd.yaml', 'custom_parameters.yaml']
 
-MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=30)
+MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=15)
 
 CONF_INVERTER_HOST = 'inverter_host'
 CONF_INVERTER_PORT = 'inverter_port'
