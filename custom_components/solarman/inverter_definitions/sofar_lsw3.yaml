@@ -275,6 +275,11 @@ parameters:
       rule: 1
       registers: [0x0022]
       icon: ''
+      lookup:
+        -  key: 0
+           value: "Parallal"
+        -  key: 1
+           value: "Dependent"
 
     - name: "Communication Board inner message"
       class: ""
