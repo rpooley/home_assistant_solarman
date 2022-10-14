@@ -23,19 +23,19 @@ _LOGGER = logging.getLogger(__name__)
 _inverter_scanner = InverterScanner()
 
 def _do_setup_platform(hass: HomeAssistant, config, async_add_entities : AddEntitiesCallback):
-    _LOGGER.debug(f'sensor.py:async_setup_platform: {config}') 
-   
+    _LOGGER.debug(f'sensor.py:async_setup_platform: {config}')
+
     inverter_name = config.get(CONF_NAME)
     inverter_host = config.get(CONF_INVERTER_HOST)
     if inverter_host == "0.0.0.0":
         inverter_host = _inverter_scanner.get_ipaddress()
-        
-   
+
+
     inverter_port = config.get(CONF_INVERTER_PORT)
     inverter_sn = config.get(CONF_INVERTER_SERIAL)
     if inverter_sn == 0:
         inverter_sn = _inverter_scanner.get_serialno()
-    
+
     inverter_mb_slaveid = config.get(CONF_INVERTER_MB_SLAVEID)
     if not inverter_mb_slaveid:
         inverter_mb_slaveid = DEFAULT_INVERTER_MB_SLAVEID
@@ -70,15 +70,15 @@ def _do_setup_platform(hass: HomeAssistant, config, async_add_entities : AddEnti
 
 # Set-up from configuration.yaml
 async def async_setup_platform(hass: HomeAssistant, config, async_add_entities : AddEntitiesCallback, discovery_info=None):
-    _LOGGER.debug(f'sensor.py:async_setup_platform: {config}') 
+    _LOGGER.debug(f'sensor.py:async_setup_platform: {config}')
     _do_setup_platform(hass, config, async_add_entities)
-       
+
 # Set-up from the entries in config-flow
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
-    _LOGGER.debug(f'sensor.py:async_setup_entry: {entry.options}') 
+    _LOGGER.debug(f'sensor.py:async_setup_entry: {entry.options}')
     _do_setup_platform(hass, entry.options, async_add_entities)
-    
-   
+
+
 
 #############################################################################################################
 # This is the entity seen by Home Assistant.
@@ -179,4 +179,3 @@ class SolarmanSensor(SolarmanSensorText):
     @property
     def unit_of_measurement(self):
         return self.uom
-

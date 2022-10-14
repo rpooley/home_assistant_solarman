@@ -4,7 +4,7 @@ import struct
 
 
 
-# The parameters start in the "business field" 
+# The parameters start in the "business field"
 # just after the first two bytes.
 OFFSET_PARAMS = 28
 
@@ -12,13 +12,13 @@ OFFSET_PARAMS = 28
 class ParameterParser:
     def __init__(self, lookups):
         self.result = {}
-        self._lookups = lookups 
+        self._lookups = lookups
         return
 
     def parse (self, rawData, start, length):
         for i in self._lookups['parameters']:
             for j in i['items']:
-                self.try_parse_field(rawData, j, start, length)        
+                self.try_parse_field(rawData, j, start, length)
         return
 
     def get_result(self):
@@ -61,19 +61,19 @@ class ParameterParser:
                 found = False
         if found:
             if 'offset' in definition:
-                value = value - definition['offset']       
-                      
+                value = value - definition['offset']
+
             if value > maxint/2:
                 value = (value - maxint) * scale
             else:
                 value = value * scale
-                
+
             if self.is_integer_num (value):
-                self.result[title] = int(value)  
-            else:   
-                self.result[title] = value  
+                self.result[title] = int(value)
+            else:
+                self.result[title] = value
         return
-    
+
     def try_parse_unsigned (self, rawData, definition, start, length):
         title = definition['name']
         scale = definition['scale']
@@ -94,13 +94,13 @@ class ParameterParser:
                 self.result[title] = self.lookup_value (value, definition['lookup'])
             else:
                 if 'offset' in definition:
-                    value = value - definition['offset']  
-                                   
+                    value = value - definition['offset']
+
                 value = value * scale
                 if self.is_integer_num (value):
-                    self.result[title] = int(value)  
-                else:   
-                    self.result[title] = value                  
+                    self.result[title] = int(value)
+                else:
+                    self.result[title] = value
         return
 
 
@@ -112,7 +112,7 @@ class ParameterParser:
 
 
     def try_parse_ascii (self, rawData, definition, start, length):
-        title = definition['name']         
+        title = definition['name']
         found = True
         value = ''
         for r in definition['registers']:
@@ -126,10 +126,10 @@ class ParameterParser:
 
         if found:
             self.result[title] = value
-        return  
-    
+        return
+
     def try_parse_bits (self, rawData, definition, start, length):
-        title = definition['name']         
+        title = definition['name']
         found = True
         value = []
         for r in definition['registers']:
@@ -143,15 +143,15 @@ class ParameterParser:
 
         if found:
             self.result[title] = value
-        return 
-    
+        return
+
     def get_sensors (self):
         result = []
         for i in self._lookups['parameters']:
             for j in i['items']:
                 result.append(j)
         return result
-    
+
     def is_integer_num(self, n):
         if isinstance(n, int):
             return True

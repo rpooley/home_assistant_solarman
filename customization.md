@@ -1,4 +1,4 @@
-# Customizing 
+# Customizing
 
 The hart of this component is the parameter-definition file ex *deye_hybrid.yaml*. By changing the file, the behaviour is totally changed.
 
@@ -11,7 +11,7 @@ sensor:
     name: ...
     inverter_host: ...
     inverter_port: ...
-    inverter_serial: ... 
+    inverter_serial: ...
     scan_interval: ...
     lookup_file: custom_parameters.yaml
 ~~~
@@ -46,7 +46,7 @@ This section defines the induvidual parameter definitions. For example:
 ~~~ YAML
 parameters:
  - group: solar
-   items: 
+   items:
     - name: "PV1 Power"
       class: "power"
       state_class: "measurement"
@@ -81,7 +81,7 @@ The group just groups parameters that belong together. The induvidual parameter-
 
 \## see https://developers.home-assistant.io/docs/core/entity/sensor/#entities-representing-a-total-amount
 
-\### The rule field specifies how to interpret the binary data. 
+\### The rule field specifies how to interpret the binary data.
 
 1. unsigned 16-bit value
 2. signed 16 bit value
@@ -89,6 +89,3 @@ The group just groups parameters that belong together. The induvidual parameter-
 4. signed 32 bit value
 5. ascii value
 6. bit field
-
-
-

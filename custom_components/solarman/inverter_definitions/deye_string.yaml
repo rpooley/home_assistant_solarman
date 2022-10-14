@@ -6,7 +6,7 @@ requests:
 
 parameters:
  - group: solar
-   items: 
+   items:
     - name: "PV1 Voltage"
       class: "voltage"
       state_class: "measurement"
@@ -63,7 +63,7 @@ parameters:
 
 
  - group: Grid
-   items: 
+   items:
     - name: "Grid Voltage L-L(A)"
       class: "voltage"
       state_class: "measurement"
@@ -93,7 +93,7 @@ parameters:
 
     - name: "Grid Current A"
       class: "current"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "A"
       scale: 0.1
       rule: 2
@@ -102,7 +102,7 @@ parameters:
 
     - name: "Grid Current B"
       class: "current"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "A"
       scale: 0.1
       rule: 2
@@ -111,7 +111,7 @@ parameters:
 
     - name: "Grid Current C"
       class: "current"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "A"
       scale: 0.1
       rule: 2
@@ -120,7 +120,7 @@ parameters:
 
     - name: "Grid Frequency"
       class: "current"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "Hz"
       scale: 0.01
       rule: 1
@@ -128,16 +128,16 @@ parameters:
       icon: 'mdi:home-lightning-bolt'
 
  - group: Inverter
-   items: 
+   items:
     - name: "Running Status"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
       registers: [0x003B]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Stand-by"
       -  key: 1
@@ -150,7 +150,7 @@ parameters:
 
     - name: "Total Ouput AC Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 0.1
       rule: 3
@@ -195,7 +195,7 @@ parameters:
 
     - name: "Inverter ID"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 5

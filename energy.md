@@ -2,10 +2,10 @@
 The [Energy Dashboard](https://www.home-assistant.io/blog/2021/08/04/home-energy-management/) introduced with Home Assistant Core 2021.8 provides most of the functionality to create an awesome dashboard, and you only need to configure the correct inputs for it to start collecting data.
 
 **Tip:**
-*You can include induvidual energy cards on your Lovelace Dashboard [see here](https://www.home-assistant.io/lovelace/energy/)* 
+*You can include induvidual energy cards on your Lovelace Dashboard [see here](https://www.home-assistant.io/lovelace/energy/)*
 
 ## Configuration
-Click on "Configuration" and select "Energy". 
+Click on "Configuration" and select "Energy".
 
 | Parameter | Select Field |
 | -- | --|

@@ -2,13 +2,13 @@ requests:
   - start: 0x0003
     end: 0x0070
     mb_functioncode: 0x03
-  - start: 0x0096  
+  - start: 0x0096
     end: 0x00f8
     mb_functioncode: 0x03
 
 parameters:
  - group: solar
-   items: 
+   items:
     - name: "PV1 Power"
       class: "power"
       state_class: "measurement"
@@ -90,10 +90,10 @@ parameters:
       icon: 'mdi:solar-power'
 
  - group: Battery
-   items: 
+   items:
     - name: "Total Battery Charge"
       class: "energy"
-      state_class: "total_increasing"      
+      state_class: "total_increasing"
       uom: "kWh"
       scale: 0.1
       rule: 3
@@ -117,7 +117,7 @@ parameters:
       rule: 1
       registers: [0x00BD]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Charge"
       -  key: 1
@@ -168,12 +168,12 @@ parameters:
       uom: "°C"
       scale: 0.1
       rule: 1
-      offset: 1000      
+      offset: 1000
       registers: [0x00B6]
       icon: 'mdi:battery'
 
  - group: Grid
-   items: 
+   items:
     - name: "Total Grid Power"
       class: "power"
       state_class: "measurement"
@@ -254,7 +254,7 @@ parameters:
       rule: 1
       registers: [0x004E,0x0050]
       icon: 'mdi:transmission-tower-export'
-      
+
     - name: "Daily Energy Sold"
       class: "energy"
       state_class: "total_increasing"
@@ -284,10 +284,10 @@ parameters:
       icon: 'mdi:transmission-tower'
 
  - group: Upload
-   items: 
+   items:
     - name: "Total Load Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 1
@@ -296,7 +296,7 @@ parameters:
 
     - name: "Load L1 Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 1
@@ -305,7 +305,7 @@ parameters:
 
     - name: "Load L2 Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 1
@@ -314,7 +314,7 @@ parameters:
 
     - name: "Load Voltage"
       class: "voltage"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "V"
       scale: 0.1
       rule: 1
@@ -323,7 +323,7 @@ parameters:
 
     - name: "Daily Load Consumption"
       class: "energy"
-      state_class: "total_increasing"      
+      state_class: "total_increasing"
       uom: "kWh"
       scale: 0.1
       rule: 1
@@ -332,7 +332,7 @@ parameters:
 
     - name: "Total Load Consumption"
       class: "energy"
-      state_class: "total_increasing"      
+      state_class: "total_increasing"
       uom: "kWh"
       scale: 0.1
       rule: 3
@@ -341,13 +341,13 @@ parameters:
 
     - name: "SmartLoad Enable Status"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
       registers: [0x00C3]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "OFF"
       -  key: 1
@@ -355,16 +355,16 @@ parameters:
       icon: 'mdi:lightning-bolt-outline'
 
  - group: Inverter
-   items: 
+   items:
     - name: "Running Status"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
       registers: [0x003B]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Stand-by"
       -  key: 1
@@ -377,7 +377,7 @@ parameters:
 
     - name: "Total Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 2
@@ -386,7 +386,7 @@ parameters:
 
     - name: "Current L1"
       class: "current"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "A"
       scale: 0.01
       rule: 2
@@ -403,7 +403,7 @@ parameters:
 
     - name: "Inverter L1 Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 2
@@ -412,7 +412,7 @@ parameters:
 
     - name: "Inverter L2 Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 2
@@ -421,36 +421,36 @@ parameters:
 
     - name: "DC Temperature"
       class: "temperature"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "°C"
       scale: 0.1
       rule: 2
-      offset: 1000      
+      offset: 1000
       registers: [0x005A]
       icon: 'mdi:thermometer'
 
     - name: "AC Temperature"
       class: "temperature"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "°C"
       scale: 0.1
       rule: 2
-      offset: 1000      
+      offset: 1000
       registers: [0x005B]
       icon: 'mdi:thermometer'
 
     - name: "Inverter ID"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 5
       registers: [0x0003,0x0004,0x0005,0x0006,0x0007]
       isstr: true
-      
+
     - name: "Communication Board Version No."
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
@@ -459,7 +459,7 @@ parameters:
 
     - name: "Control Board Version No."
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
@@ -468,13 +468,13 @@ parameters:
 
     - name: "Grid-connected Status"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
       registers: [0x00C2]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Off-Grid"
       -  key: 1
@@ -483,12 +483,12 @@ parameters:
     - name: "Gen-connected Status"
       class: ""
       uom: ""
-      state_class: ""      
+      state_class: ""
       scale: 1
       rule: 1
       registers: [0x00A6]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "none"
       -  key: 1
@@ -496,7 +496,7 @@ parameters:
 
     - name: "Gen Power"
       class: "power"
-      state_class: "measurement"      
+      state_class: "measurement"
       uom: "W"
       scale: 1
       rule: 1
@@ -504,13 +504,13 @@ parameters:
 
     - name: "Time of use"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 1
       registers: [0x00F8]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Disable"
       -  key: 1
@@ -518,13 +518,13 @@ parameters:
 
     - name: "Work Mode"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 3
       registers: [0x00F4,0x00F7]
       isstr: true
-      lookup: 
+      lookup:
       -  key: 0
          value: "Selling First"
       -  key: 1
@@ -538,10 +538,10 @@ parameters:
       icon: 'mdi:home-lightning-bolt'
 
  - group: Alert
-   items: 
+   items:
     - name: "Alert"
       class: ""
-      state_class: ""      
+      state_class: ""
       uom: ""
       scale: 1
       rule: 6
